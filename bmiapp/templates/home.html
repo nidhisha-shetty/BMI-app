@@ -1,0 +1,12 @@
+<form method="POST">{% csrf_token %}
+	{{form.as_p}}
+	<input type="submit" value="Check BMI">
+</form>
+ 
+<p>
+	{% for message in messages %}
+		<h3>{{message}} </h3>
+	{% endfor %}
+</p>
+{{obj.height}}
+{{obj.weight}}
