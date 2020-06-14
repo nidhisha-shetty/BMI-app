@@ -12,13 +12,13 @@ def home_view(request):
  	obj=BMI.objects.last()
  	result=obj.weight / ((obj.height/100) ** 2)
  	messages.info(request, obj.name + " your BMI is " + str(result))
- 	if int(result) in range(16, int(18.5)):
+ 	if int(result) in range(16, 19):
  		messages.info(request, "You are UnderWeight")
- 	elif int(result) in range(18.5, int(24.9)):
+ 	elif int(result) in range(18, 25):
  		messages.info(request, "You are Normal!")
- 	elif int(result) in range(25, int(29.9)):
+ 	elif int(result) in range(25, 30):
  		messages.info(request, "You are Overweight")
- 	elif int(result) in range(30, int(39.9)):
+ 	elif int(result) in range(30, 40):
  		messages.info(request, "You are Obese")
  	else:
  		messages.info(request, "You are Extra Obese")
