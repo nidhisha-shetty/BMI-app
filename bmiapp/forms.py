@@ -6,6 +6,6 @@ class BMI_forms(forms.ModelForm):
 		model = BMI
 		fields = [
 			'name',
-			'height',
+			'height_in_cms',
 			'weight',
 		]

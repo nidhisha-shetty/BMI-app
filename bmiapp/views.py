@@ -10,7 +10,7 @@ def home_view(request):
  	 	form.save()
  	 	form = BMI_forms()
  	obj=BMI.objects.last()
- 	result=obj.weight / ((obj.height/100) ** 2)
+ 	result=obj.weight / ((obj.height_in_cms/100) ** 2)
  	messages.info(request, obj.name + " your BMI is " + str(result))
  	if int(result) in range(16, 19):
  		messages.info(request, "You are UnderWeight")
@@ -21,7 +21,7 @@ def home_view(request):
  	elif int(result) in range(30, 40):
  		messages.info(request, "You are Obese")
  	else:
- 		messages.info(request, "You are Extra Obese")
+ 		messages.info(request, "You are Extra Obese. Kindly consult a doctor")
  	context = {
  		'form': form,
 		'obj':obj
