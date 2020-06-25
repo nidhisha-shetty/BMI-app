@@ -1,5 +1,10 @@
-<p align="center" style = "font-family:Comic Sans MS; font-size:40px; "><b><u>BMI Calculator</u></b></p>
+{% load static %}
+<title>BMI app</title>
 
+<p align="center" style = "font-family:Comic Sans MS; font-size:40px; "><b><u>BMI Calculator</u></b></p>
+<p align="center">
+<img src="{% static '/bmi.gif'%}" height="200" width="300" border="1" />
+</p>
 <form method="POST" style="font-family:Comic Sans MS" align="center">{% csrf_token %}
 	{{form.as_p}}
 	<input type="submit" value="Check BMI">
@@ -7,8 +12,9 @@
 <body style="background-color:#BDC581;">
 
 <p style="font-family:Comic Sans MS" align="center">
-	<u>Last check:<br></u>
+	<u>BMI result:<br></u>
 	{% for message in messages %}
 		{{message}} <br>
 	{% endfor %}
 </p>
+

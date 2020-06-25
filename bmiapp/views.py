@@ -20,8 +20,10 @@ def home_view(request):
  		messages.info(request, "You are Overweight")
  	elif int(result) in range(30, 40):
  		messages.info(request, "You are Obese")
- 	else:
+ 	elif int(result) in range(40, 100):
  		messages.info(request, "You are Extra Obese. Kindly consult a doctor")
+ 	else:
+ 		messages.info(request, "Incorrect input")
  	context = {
  		'form': form,
 		'obj':obj
