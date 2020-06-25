@@ -7,5 +7,5 @@ class BMI_forms(forms.ModelForm):
 		fields = [
 			'name',
 			'height_in_cms',
-			'weight',
+			'weight_in_kgs',
 		]
